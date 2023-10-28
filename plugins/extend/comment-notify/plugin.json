@@ -1,0 +1,18 @@
+{
+    "$schema": "../../../system/schema/extend.json",
+    "name": "Upozornění na nový komentář",
+    "description": "Plugin odesílá upozornění na nově přidaný komentář.",
+    "authors": [
+        {"name": "Lukáš Tesař", "url": "https://tlukas.eu"}
+    ],
+    "version": "1.0",
+    "environment": {
+        "system": "^8.0"
+    },
+    "config_defaults": {
+        "adresát_upozornění": "defaul@mail.com"
+    },
+    "events": [
+        {"event": "posts.submit", "script": "event/comment_notify.php"}
+    ]
+}
