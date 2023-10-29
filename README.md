@@ -1,5 +1,5 @@
 # comments notify
-Plugin přidává možnost upozornění administrátora na nový komentář.
+The plugin adds the ability to notify the administrator of a new comment.
  
 ## Requirements
 - SunLight CMS 8
