@@ -38,7 +38,7 @@ return function(array $args) {
  
         $mailText .= "\n".$args['text'];   
     
-        if (!$this->getConfig()['adresát_upozornění'] || $this->getConfig()['adresát_upozornění'] == "defaul@mail.com") 
+        if (!$this->getConfig()['adresát_upozornění'] || $this->getConfig()['adresát_upozornění'] == "default@mail.com") 
             return;
         else
             Email::send($this->getConfig()['adresát_upozornění'], "Nový příspěvek na webu", $mailText);

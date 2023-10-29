@@ -10,7 +10,7 @@
         "system": "^8.0"
     },
     "config_defaults": {
-        "adresát_upozornění": "defaul@mail.com"
+        "adresát_upozornění": "default@mail.com"
     },
     "events": [
         {"event": "posts.submit", "script": "event/comment_notify.php"}
