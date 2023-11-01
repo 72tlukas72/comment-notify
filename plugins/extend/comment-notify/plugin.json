@@ -10,7 +10,7 @@
         "system": "^8.0"
     },
     "config_defaults": {
-        "recipient": "default@mail.com"
+        "recipient": ""
     },
     "events": [
         {"event": "posts.submit", "script": "event/comment_notify.php"}

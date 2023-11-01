@@ -6,6 +6,11 @@ use Sunlight\Database\Database as DB;
 use Sunlight\Email;
 
 return function(array $args) {
+    
+    if (empty($this->getConfig()['recipient'])) {
+        return;
+    }
+    
     $mailText = "Dobrý den,\nna webové stránky ".Template::siteTitle()." (".Template::siteUrl().")";
     $send = false;
     $user = "";
@@ -38,9 +43,6 @@ return function(array $args) {
  
         $mailText .= "\n".$args['text'];   
     
-        if (!$this->getConfig()['adresát_upozornění'] || $this->getConfig()['adresát_upozornění'] == "default@mail.com") 
-            return;
-        else
-            Email::send($this->getConfig()['adresát_upozornění'], "Nový příspěvek na webu", $mailText);
+        Email::send($this->getConfig()['adresát_upozornění'], "Nový příspěvek na webu", $mailText);
     }
 };
