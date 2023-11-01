@@ -38,9 +38,7 @@ return function(array $args) {
             $mailText .= " od uživatele " . $user . ".\n";
         }
 
-        for($i = 0; $i < 30; $i++) {
-            $mailText .= "-";
-        }
+        $mailText .= str_repeat('-', 30);
  
         $mailText .= "\n" . $args['text'];   
     
