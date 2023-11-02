@@ -12,6 +12,9 @@
     "config_defaults": {
         "recipient": ""
     },
+    "lang": {
+        "comment-notify": "lang"
+    },
     "events": [
         {"event": "posts.submit", "script": "event/comment_notify.php"}
     ]
