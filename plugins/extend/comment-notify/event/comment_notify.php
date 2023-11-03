@@ -5,10 +5,11 @@ namespace Sunlight;
 use Sunlight\Database\Database as DB;
 use Sunlight\Email;
 use Sunlight\Post\Post;
+use SunlightExtend\CommentNotify;
 
 return function(array $args) {
     
-    if (empty($this->getConfig()['recipient'])) {
+    if (empty($this->getConfig()['recipient']) || !Email::validate($this->getConfig()['recipient'])) {
         return;
     }
     
