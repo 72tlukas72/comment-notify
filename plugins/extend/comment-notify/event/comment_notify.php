@@ -1,11 +1,9 @@
 <?php
 
-namespace Sunlight;
-
 use Sunlight\Database\Database as DB;
 use Sunlight\Email;
 use Sunlight\Post\Post;
-use SunlightExtend\CommentNotify;
+use Sunlight\Template;
 
 return function(array $args) {
     
@@ -15,7 +13,6 @@ return function(array $args) {
     
     $mailText = "Dobrý den,\nna webové stránky " . Template::siteTitle() . " (" . Template::siteUrl() . ")";
     $send = false;
-    $user = "";
     
     if($args['posttype'] == Post::SECTION_COMMENT || $args['posttype'] == Post::BOOK_ENTRY || $args['posttype'] == Post::FORUM_TOPIC) {
         $title = DB::result(DB::query("SELECT title FROM " . DB::table('page') . "  WHERE id=" . $args['posttarget']));
